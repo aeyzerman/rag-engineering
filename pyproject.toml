@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "engineering-rag"
+version = "0.1.0"
+description = "Local RAG project for engineering study materials"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "joblib>=1.5.2",
+    "numpy>=2.4.6",
+    "ollama>=0.6.2",
+    "pypdf>=5.0.0",
+    "scikit-learn>=1.8.0",
+    "streamlit>=1.37.0",
+]
+
+[project.scripts]
+rag-tools = "engineering.rag_project.cli:main"
+rag-ui = "engineering.rag_project.app:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["engineering*"]
+
