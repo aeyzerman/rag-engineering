@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products>
+    <product id="1" category="electronics">
+        <name>Laptop</name>
+        <price currency="RUB">45000</price>
+        <stock>15</stock>
+    </product>
+    <product id="2" category="accessories">
+        <name>Mouse</name>
+        <price currency="RUB">800</price>
+        <stock>50</stock>
+    </product>
+    <product id="3" category="electronics">
+        <name>Monitor</name>
+        <price currency="RUB">12000</price>
+        <stock>8</stock>
+    </product>
+</products>

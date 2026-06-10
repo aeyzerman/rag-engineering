@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<products>
+  <product>
+    <id>1</id>
+    <category>electronics</category>
+    <name>Laptop</name>
+    <price>45000</price>
+    <stock>15</stock>
+  </product>
+  <product>
+    <id>2</id>
+    <category>accessories</category>
+    <name>Mouse</name>
+    <price>800</price>
+    <stock>50</stock>
+  </product>
+  <product>
+    <id>3</id>
+    <category>electronics</category>
+    <name>Monitor</name>
+    <price>12000</price>
+    <stock>8</stock>
+  </product>
+</products>

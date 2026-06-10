@@ -1,0 +1,69 @@
+{
+  "total_revenue": 367900.0,
+  "total_orders": 15,
+  "avg_order_value": 24526.666666666668,
+  "top_products": [
+    {
+      "product": "Laptop",
+      "revenue": 190000
+    },
+    {
+      "product": "Tablet",
+      "revenue": 50000
+    },
+    {
+      "product": "Monitor",
+      "revenue": 40000
+    },
+    {
+      "product": "SSD",
+      "revenue": 24000
+    },
+    {
+      "product": "Printer",
+      "revenue": 15000
+    },
+    {
+      "product": "Headphones",
+      "revenue": 14000
+    },
+    {
+      "product": "Webcam",
+      "revenue": 11000
+    },
+    {
+      "product": "Speaker",
+      "revenue": 8400
+    },
+    {
+      "product": "Keyboard",
+      "revenue": 4500
+    },
+    {
+      "product": "Mouse Pad",
+      "revenue": 4000
+    }
+  ],
+  "regions": [
+    {
+      "region": "Kazan",
+      "orders": 3,
+      "revenue": 66000
+    },
+    {
+      "region": "Moscow",
+      "orders": 6,
+      "revenue": 188900
+    },
+    {
+      "region": "Novosibirsk",
+      "orders": 2,
+      "revenue": 63000
+    },
+    {
+      "region": "St. Petersburg",
+      "orders": 4,
+      "revenue": 50000
+    }
+  ]
+}

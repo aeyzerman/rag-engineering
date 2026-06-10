@@ -1,0 +1,9 @@
+# Apache Spark: основы обработки данных
+
+Apache Spark - система распределённой обработки данных в памяти. Spark обеспечивает ускорение до 100x по сравнению с Hadoop MapReduce.
+
+Основные абстракции Spark: RDD (Resilient Distributed Dataset) - базовая неизменяемая распределённая коллекция. DataFrame - структурированный API поверх RDD, оптимизированный через Catalyst. Dataset - типобезопасный API (только Scala и Java).
+
+Операции Spark: трансформации (ленивые) - map, filter, groupBy, join; действия (запускают выполнение) - collect, count, show, write. Spark SQL позволяет выполнять SQL-запросы поверх DataFrame. DataFrame API и Spark SQL используют один Catalyst-оптимизатор, поэтому их производительность идентична.
+
+Spark интегрируется с HDFS, S3, Parquet, Avro, Kafka, Hive.

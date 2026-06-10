@@ -1,0 +1,72 @@
+[
+  {
+    "id": "doc-01-txt",
+    "title": "Форматы данных: CSV, JSON, XML",
+    "source": "doc_01.txt",
+    "text": "# Форматы данных: CSV, JSON, XML\n\nCSV (Comma-Separated Values) - текстовый формат хранения табличных данных. Каждая строка соответствует одной записи, поля разделяются запятыми. Преимущества CSV: простота, универсальность, читаемость человеком. Недостатки CSV: большой размер файла, отсутствие типов данных, отсутствие схемы. CSV применяется для экспорта данных и небольших датасетов.\n\nJSON (JavaScript Object Notation) - текстовый формат для структурированных данных. Поддерживает вложенность, массивы, объекты. Широко используется в веб-API. Преимущества JSON: гибкость, поддержка иерархии. Недостатки: избыточность, медленная обработка больших объемов.\n\nXML (eXtensible Markup Language) - формат с тегами и атрибутами. Поддерживает схемы валидации (XSD) и иерархическую структуру. Применяется в корпоративных системах и обмене данными между системами. Недостатки XML: многословность и сложность парсинга. При выборе формата нужно учитывать объем данных, структуру и требования к производительности.",
+    "path": "/home/aeyzerman/PycharmProjects/uni_projects/engineering/docs/doc_01.txt",
+    "metadata": {
+      "extension": ".txt"
+    }
+  },
+  {
+    "id": "doc-02-txt",
+    "title": "Apache Parquet: колоночный формат",
+    "source": "doc_02.txt",
+    "text": "# Apache Parquet: колоночный формат\n\nApache Parquet - бинарный колоночно-ориентированный формат хранения данных. Разработан для эффективного хранения и аналитической обработки больших данных.\n\nКлючевое свойство Parquet: данные каждой колонки хранятся непрерывно на диске. При аналитических запросах читаются только нужные колонки, а не вся строка. Это ускоряет операции AVG, SUM, GROUP BY в десятки раз по сравнению с CSV.\n\nParquet поддерживает сжатие: snappy (быстрое), gzip (компактное), zstd. Формат хранит метаданные схемы и min/max статистики для каждого row-group. Это позволяет делать predicate pushdown - пропускать блоки данных без чтения.\n\nParquet интегрируется со Spark, Hive, Presto, BigQuery, Athena, Delta Lake. Используется для Data Lake, DWH и аналитических пайплайнов. Типичная экономия места составляет от 3 до 8 раз по сравнению с CSV.",
+    "path": "/home/aeyzerman/PycharmProjects/uni_projects/engineering/docs/doc_02.txt",
+    "metadata": {
+      "extension": ".txt"
+    }
+  },
+  {
+    "id": "doc-03-txt",
+    "title": "Apache Avro: формат сериализации",
+    "source": "doc_03.txt",
+    "text": "# Apache Avro: формат сериализации\n\nApache Avro - бинарный формат сериализации данных с поддержкой эволюции схем. Схема хранится прямо внутри файла в формате JSON.\n\nГлавное преимущество Avro - поддержка эволюции схем. Backward-совместимость: новая схема может читать данные, записанные по старой схеме. Forward-совместимость: старая схема может читать данные по новой схеме. Для этого новые поля объявляются с default-значениями.\n\nAvro использует строчную модель хранения (row-based), что делает его оптимальным для записи потоков событий в Kafka и Flume. В Kafka-экосистеме Avro применяется вместе со Schema Registry.\n\nТипичный паттерн в Data Engineering: ingestion через Kafka с Avro-сериализацией, затем долгосрочное хранение в Parquet для аналитики.",
+    "path": "/home/aeyzerman/PycharmProjects/uni_projects/engineering/docs/doc_03.txt",
+    "metadata": {
+      "extension": ".txt"
+    }
+  },
+  {
+    "id": "doc-04-txt",
+    "title": "Apache Spark: основы обработки данных",
+    "source": "doc_04.txt",
+    "text": "# Apache Spark: основы обработки данных\n\nApache Spark - система распределённой обработки данных в памяти. Spark обеспечивает ускорение до 100x по сравнению с Hadoop MapReduce.\n\nОсновные абстракции Spark: RDD (Resilient Distributed Dataset) - базовая неизменяемая распределённая коллекция. DataFrame - структурированный API поверх RDD, оптимизированный через Catalyst. Dataset - типобезопасный API (только Scala и Java).\n\nОперации Spark: трансформации (ленивые) - map, filter, groupBy, join; действия (запускают выполнение) - collect, count, show, write. Spark SQL позволяет выполнять SQL-запросы поверх DataFrame. DataFrame API и Spark SQL используют один Catalyst-оптимизатор, поэтому их производительность идентична.\n\nSpark интегрируется с HDFS, S3, Parquet, Avro, Kafka, Hive.",
+    "path": "/home/aeyzerman/PycharmProjects/uni_projects/engineering/docs/doc_04.txt",
+    "metadata": {
+      "extension": ".txt"
+    }
+  },
+  {
+    "id": "doc-05-txt",
+    "title": "ETL-процессы и пайплайны данных",
+    "source": "doc_05.txt",
+    "text": "# ETL-процессы и пайплайны данных\n\nETL (Extract, Transform, Load) - классический паттерн обработки данных.\n\nExtract (извлечение): загрузка данных из источников - реляционных баз данных, файлов CSV, JSON, XML, Excel, REST API, потоков событий Kafka.\n\nTransform (трансформация): очистка данных, приведение типов, нормализация, агрегация, обогащение из дополнительных источников, создание вычисляемых колонок, фильтрация некорректных записей, дедупликация.\n\nLoad (загрузка): запись результатов в целевое хранилище - DWH, Data Lake, аналитическую базу данных или витрины данных.\n\nСовременные пайплайны часто используют ELT подход: данные загружаются сырыми, трансформация выполняется внутри DWH. Инструменты ETL: Apache Spark, Apache Flink, dbt, Airbyte, Fivetran. Оркестрация пайплайнов: Apache Airflow, Prefect, Dagster.",
+    "path": "/home/aeyzerman/PycharmProjects/uni_projects/engineering/docs/doc_05.txt",
+    "metadata": {
+      "extension": ".txt"
+    }
+  },
+  {
+    "id": "doc-06-txt",
+    "title": "Pandas: работа с данными в Python",
+    "source": "doc_06.txt",
+    "text": "# Pandas: работа с данными в Python\n\nPandas - библиотека Python для работы с табличными данными. Основная структура данных: DataFrame - двумерная таблица с именованными осями.\n\nPandas поддерживает чтение и запись данных в форматах: CSV (read_csv, to_csv), Excel (read_excel, to_excel), JSON (read_json, to_json), XML (read_xml, to_xml), Parquet (read_parquet, to_parquet), SQL (read_sql).\n\nКлючевые операции: фильтрация строк, выборка колонок, группировка (groupby), слияние таблиц (merge, join), применение функций (apply, map), обработка пропусков (fillna, dropna).\n\nPandas эффективен для датасетов в памяти (до нескольких ГБ). Для больших данных рекомендуется PySpark или Polars. Pandas хорошо интегрируется с NumPy, Matplotlib и Scikit-learn.",
+    "path": "/home/aeyzerman/PycharmProjects/uni_projects/engineering/docs/doc_06.txt",
+    "metadata": {
+      "extension": ".txt"
+    }
+  },
+  {
+    "id": "doc-07-txt",
+    "title": "Векторные базы данных и семантический поиск",
+    "source": "doc_07.txt",
+    "text": "# Векторные базы данных и семантический поиск\n\nВекторные базы данных хранят данные в виде числовых векторов (эмбеддингов) и поддерживают быстрый поиск ближайших соседей (ANN).\n\nОсновные решения: FAISS (Facebook AI Similarity Search) - библиотека для эффективного поиска по векторам; Chroma - легковесная встраиваемая векторная БД; Pinecone, Weaviate, Qdrant - облачные и self-hosted решения.\n\nМетрики близости: косинусное сходство (для текстовых эмбеддингов), евклидово расстояние (L2), скалярное произведение (inner product).\n\nЭмбеддинги получают из предобученных моделей: sentence-transformers (all-MiniLM-L6-v2, paraphrase-multilingual), разные локальные и облачные embedding-модели. Качество retrieval напрямую зависит от качества эмбеддинговой модели. В RAG-системах векторный индекс используется для поиска релевантных чанков по пользовательскому вопросу перед передачей контекста в LLM.",
+    "path": "/home/aeyzerman/PycharmProjects/uni_projects/engineering/docs/doc_07.txt",
+    "metadata": {
+      "extension": ".txt"
+    }
+  }
+]

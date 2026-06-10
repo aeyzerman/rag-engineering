@@ -1,0 +1,16 @@
+[
+  {
+    "category":"Accessories",
+    "total_revenue":37900,
+    "total_orders":6,
+    "avg_price":1800.0,
+    "note":"avg_salary=78333"
+  },
+  {
+    "category":"Electronics",
+    "total_revenue":330000,
+    "total_orders":9,
+    "avg_price":24944.44,
+    "note":"avg_salary=78333"
+  }
+]

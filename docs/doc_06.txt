@@ -1,0 +1,9 @@
+# Pandas: работа с данными в Python
+
+Pandas - библиотека Python для работы с табличными данными. Основная структура данных: DataFrame - двумерная таблица с именованными осями.
+
+Pandas поддерживает чтение и запись данных в форматах: CSV (read_csv, to_csv), Excel (read_excel, to_excel), JSON (read_json, to_json), XML (read_xml, to_xml), Parquet (read_parquet, to_parquet), SQL (read_sql).
+
+Ключевые операции: фильтрация строк, выборка колонок, группировка (groupby), слияние таблиц (merge, join), применение функций (apply, map), обработка пропусков (fillna, dropna).
+
+Pandas эффективен для датасетов в памяти (до нескольких ГБ). Для больших данных рекомендуется PySpark или Polars. Pandas хорошо интегрируется с NumPy, Matplotlib и Scikit-learn.

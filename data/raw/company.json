@@ -1,0 +1,28 @@
+{
+  "company": "TechCorp",
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ivanov",
+      "contact": {
+        "email": "ivanov@example.com",
+        "phone": "+7-999-123-4567"
+      },
+      "projects": [
+        "Project A",
+        "Project B"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Petrov",
+      "contact": {
+        "email": "petrov@example.com",
+        "phone": "+7-999-765-4321"
+      },
+      "projects": [
+        "Project C"
+      ]
+    }
+  ]
+}

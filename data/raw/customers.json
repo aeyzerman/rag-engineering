@@ -1,0 +1,28 @@
+{
+  "customers": [
+    {
+      "id": "C001",
+      "name": "Ivanov",
+      "tier": "gold",
+      "region": "Moscow"
+    },
+    {
+      "id": "C002",
+      "name": "Petrov",
+      "tier": "silver",
+      "region": "St. Petersburg"
+    },
+    {
+      "id": "C003",
+      "name": "Sidorov",
+      "tier": "bronze",
+      "region": "Kazan"
+    },
+    {
+      "id": "C004",
+      "name": "Kozlov",
+      "tier": "gold",
+      "region": "Novosibirsk"
+    }
+  ]
+}
