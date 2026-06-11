@@ -44,7 +44,6 @@ def main() -> None:
         model_options = ["qwen2.5:7b", "llama3.2:3b", "qwen2.5:14b", "llama3.2:1b", "custom"]
         chosen_model = st.selectbox("Ollama model", model_options, index=0)
         model = st.text_input("Custom model", default.model) if chosen_model == "custom" else chosen_model
-        st.caption("Рекомендуемый баланс для этой машины: `qwen2.5:7b`.")
         top_k = st.slider("Top-K", min_value=1, max_value=8, value=default.top_k)
         chunk_size = st.slider("Chunk size", min_value=40, max_value=320, value=default.chunk_size, step=10)
         chunk_overlap = st.slider("Chunk overlap", min_value=0, max_value=120, value=default.chunk_overlap, step=4)
