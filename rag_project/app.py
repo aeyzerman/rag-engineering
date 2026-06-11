@@ -28,7 +28,6 @@ def _rerun() -> None:
 def main() -> None:
     st.set_page_config(page_title="RAG Studio", layout="wide")
     st.title("RAG Studio")
-    st.caption("Локальный RAG для учебного корпуса с веб-интерфейсом, загрузкой контекста и индексированием.")
 
     state = st.session_state
     state.setdefault("rag_busy", False)
